@@ -1,2 +1,4 @@
 # bashsql
+BashSQL是一个非常方便小巧的数据库命令行工具，完全使用Bash脚本开发，其主要目的是帮助程序员快速了解学习Bash脚本编程。BashSQL可以支持MySQL（默认）、Oracle、Redis、MongoDB、SunlightDB、TiDB、GBase、Mycat等各类通用型数据库及数据库中间件系统。与常用的命令行工具相比，不必每次输入烦琐的字符串登陆数据库，拥有更清楚的命令提示信息。当然你也可以定制关键字，帮助你快速查询、检索、更新数据。在图形界面无法使用的环境下，BashSQL是一个不错的替代工具。
+
 BashSQL is a very easy and simple database command line tool, the software is fully developed using Bash scripts, its main purpose is to help programmers to quickly learn Bash script programming. BashSQL can support MySQL (default), Oracle, Redis, MongoDB, SunlightDB, TiDB, GBase, Mycat and other general-purpose database and database middleware system. Compared with the commonly used command line tools, do not have to enter the cumbersome string landing database, have a more clear command prompt information. Of course, you can also customize the keywords to help you quickly query, retrieve, update the data. In the graphical interface can not use the environment, BashSQL is a good alternative tool.
