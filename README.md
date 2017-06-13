@@ -6,3 +6,5 @@ SunlightDB2017 是一个去中心化的数据库。使用C语言开发，具有�
 http://blog.csdn.net/dreamcode
 
 BashSQL is a very easy and simple database command line tool, the software is fully developed using Bash scripts, its main purpose is to help programmers to quickly learn Bash script programming. BashSQL can support MySQL (default), Oracle, Redis, MongoDB, SunlightDB, TiDB, GBase, Mycat and other general-purpose database and database middleware system. Compared with the commonly used command line tools, do not have to enter the cumbersome string landing database, have a more clear command prompt information. Of course, you can also customize the keywords to help you quickly query, retrieve, update the data. In the graphical interface can not use the environment, BashSQL is a good alternative tool.
+
+http://www.sunlightcloud.com
