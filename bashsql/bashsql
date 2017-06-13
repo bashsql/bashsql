@@ -1,0 +1,97 @@
+#!/bin/bash
+
+##########################################"
+# Author wangjinjian"
+# Date   2009-2-10"
+# email  1526330277@qq.com "
+##########################################"
+
+export bashsql_home=/bashsql
+. $bashsql_home/dbconf.sh
+. $bashsql_home/dbcommand.sh
+. $bashsql_home/ui.sh
+. $bashsql_home/handler.sh
+. $bashsql_home/dbrunner.sh
+. $bashsql_home/language_en.sh
+
+
+start(){
+	##########################################
+	# bashsql main
+	##########################################
+
+	ln_simple_begin
+	
+	db_start
+
+	#to choose a database
+	handler_choose_database
+
+	#to execute mysql commond
+	handler_excute_commond
+
+	db_stop
+
+	ln_simple_end
+}
+
+conf(){ 
+	echo "Changing bashsql '$bashsql_home/dbconf.sh' file..."
+	`rm -rf $bashsql_home/dbconf.sh`
+	`cat $bashsql_home/header > $bashsql_home/dbconf.sh`
+	echo "Please Input MySQL Home(/usr):"
+	read db_home
+
+	if [ "$db_home" != "" ]
+	then
+		echo "DB_HOME=$db_home" >> $bashsql_home/dbconf.sh
+	else
+		echo "DB_HOME=/usr" >> $bashsql_home/dbconf.sh
+	fi
+
+	echo "Please Input MySQL IP Address(localhost):"
+	read db_ip
+
+	if [ "$db_ip" != "" ]
+	then
+		echo "IP_ADDR=$db_ip" >> $bashsql_home/dbconf.sh
+	else
+		echo "IP_ADDR=localhost" >> $bashsql_home/dbconf.sh
+	fi
+
+	echo "Please Input MySQL USERNAME(root):"
+	read db_username
+
+	if [ "$db_username" != "" ]
+	then
+		echo "MYSQL_USERNAME=$db_username" >> $bashsql_home/dbconf.sh
+	else
+		echo "MYSQL_USERNAME=root" >> $bashsql_home/dbconf.sh
+	fi
+
+	echo "Please Input MySQL PASSWORD(root):"
+	read db_password
+
+	if [ "$db_password" != "" ]
+	then
+		echo "MYSQL_PASSWORD=$db_password" >> $bashsql_home/dbconf.sh
+	else
+		echo "MYSQL_PASSWORD=root" >> $bashsql_home/dbconf.sh
+	fi
+	sleep 1
+	echo "Success!"	
+}
+
+######################################
+#main
+######################################
+case "$1" in
+  conf)
+	conf
+	;;
+  *)
+	start
+	exit 1
+esac
+
+
